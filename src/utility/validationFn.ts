@@ -11,3 +11,9 @@ export const isIsbnContainAlphabet = (isbn: string): boolean => {
 export const isEmpty = (field: string | number): boolean => {
     return field ? false : true;
 };
+
+export const isValidYear = (year: number): boolean => {
+    let currentYear = new Date().getFullYear();
+
+    return year <= currentYear;
+};
