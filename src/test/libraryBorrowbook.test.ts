@@ -7,7 +7,13 @@ describe("book borrow feature testing", () => {
     });
 
     test("1. user should borrow the book", () => {
-        let isbn = "0123456789";
+        library.addBook({
+            isbn: "0123456789",
+            title: "Basic of javascript",
+            author: "jone doe",
+            publicationYear: 2022,
+        });
+        let isbn = "0123456780";
         expect(() => {
             library.borrowBook(isbn);
         }).not.toThrow();
