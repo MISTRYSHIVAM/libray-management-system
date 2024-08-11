@@ -41,7 +41,7 @@ class Library {
             throw new invalidAuthorException("please provide the author name");
         }
         if (isEmpty(book.publicationYear)) {
-            throw new invalidyearException(
+            throw new invalidYearException(
                 "please provide the publication year of book"
             );
         }
