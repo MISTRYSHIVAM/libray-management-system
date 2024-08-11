@@ -33,6 +33,10 @@ class Library {
             throw new invalidTitleExecption("please provide the title");
         }
 
+        if (isEmpty(book.author)) {
+            throw new invalidAuthorException("please provide the author name");
+        }
+
         this.books.set(book.isbn, book);
     }
 }
