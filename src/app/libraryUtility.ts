@@ -46,6 +46,9 @@ class Library {
                 "please provide the publication year of book"
             );
         }
+        if (!isValidYear(book.publicationYear)) {
+            throw new invalidYearException("invalid the publication year");
+        }
 
         this.books.set(book.isbn, book);
     }
