@@ -13,7 +13,7 @@ describe("book borrow feature testing", () => {
         }).not.toThrow();
     });
 
-    let invalidIsbn = ["", "sdgy4587", "123654"];
+    let invalidIsbn = ["", "sdgy458725", "123654"];
 
     invalidIsbn.forEach((isbn, index) => {
         test(`${index + 2}. throw exception when isbn is invalid`, () => {
