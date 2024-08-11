@@ -3,7 +3,11 @@ import {
     isIsbnContainAlphabet,
     isIsbnLengthValid,
 } from "../utility/validationFn";
-import { invalidIsbnException, invalidTitleExecption } from "./customException";
+import {
+    invalidAuthorException,
+    invalidIsbnException,
+    invalidTitleExecption,
+} from "./customException";
 
 interface Book {
     isbn: string;
