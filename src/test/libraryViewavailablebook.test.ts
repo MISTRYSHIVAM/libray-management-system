@@ -16,4 +16,10 @@ describe("view available book feature testing", () => {
         library.addBook(book);
         expect(library.viewAvailableBook()).toEqual([book]);
     });
+
+    test("2. throw exception if book is not available in library", () => {
+        expect(() => {
+            library.viewAvailableBook();
+        }).toThrow("libarary has no book");
+    });
 });
