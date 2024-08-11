@@ -5,6 +5,7 @@ import {
     isValidYear,
 } from "../utility/validationFn";
 import {
+    bookException,
     invalidAuthorException,
     invalidIsbnException,
     invalidTitleExecption,
@@ -42,13 +43,19 @@ class Library {
         if (isEmpty(book.author)) {
             throw new invalidAuthorException("please provide the author name");
         }
+
         if (isEmpty(book.publicationYear)) {
             throw new invalidYearException(
                 "please provide the publication year of book"
             );
         }
+
         if (!isValidYear(book.publicationYear)) {
             throw new invalidYearException("invalid the publication year");
+        }
+
+        if (this.books.has(book.isbn)) {
+            throw new bookException("Book is already added to library");
         }
 
         this.books.set(book.isbn, book);

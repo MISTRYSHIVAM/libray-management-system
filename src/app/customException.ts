@@ -32,9 +32,17 @@ class invalidYearException extends Error {
         this.name = "invalidPublicationYearException";
     }
 }
+
+class bookException extends Error {
+    constructor(msg: string) {
+        super(msg);
+        this.name = "bookException";
+    }
+}
 export {
     invalidIsbnException,
     invalidTitleExecption,
     invalidAuthorException,
     invalidYearException,
+    bookException,
 };
