@@ -112,6 +112,10 @@ class Library {
     }
 
     viewAvailableBook(): Book[] {
+        if (this.books.size === 0) {
+            throw new bookException("libarary has no book");
+        }
+
         let availBooks = Array.from(this.books.values());
         return availBooks;
     }
