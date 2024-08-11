@@ -85,7 +85,19 @@ class Library {
         this.borrowedBookList.push(isbn);
     }
 
-    returnBook(isbn: string) {}
+    returnBook(isbn: string) {
+        if (isEmpty(isbn)) {
+            throw new invalidIsbnException("please provide the isbn");
+        }
+
+        if (!isIsbnLengthValid(isbn)) {
+            throw new invalidIsbnException("isbn lengh must be ten");
+        }
+
+        if (isIsbnContainAlphabet(isbn)) {
+            throw new invalidIsbnException("isbn should not contain alphabet");
+        }
+    }
 }
 
 export default Library;
