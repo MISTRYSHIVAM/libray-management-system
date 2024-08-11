@@ -21,7 +21,7 @@ interface Book {
 
 class Library {
     private books: Map<string, Book> = new Map();
-    private brrowedBookList: String[] = [];
+    private borrowedBookList: String[] = [];
 
     addBook(book: Book) {
         if (isEmpty(book.isbn)) {
@@ -59,6 +59,10 @@ class Library {
         }
 
         this.books.set(book.isbn, book);
+    }
+
+    borrowBook(isbn: string) {
+        this.borrowedBookList.push(isbn);
     }
 }
 
