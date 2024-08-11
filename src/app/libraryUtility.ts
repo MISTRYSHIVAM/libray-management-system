@@ -1,4 +1,7 @@
-import { isIsbnLengthValid } from "../utility/validationFn";
+import {
+    isIsbnContainAlphabet,
+    isIsbnLengthValid,
+} from "../utility/validationFn";
 import { invalidIsbnError } from "./customException";
 
 interface Book {

@@ -34,7 +34,7 @@ describe("book add feature testing", () => {
 
         test("2.2 throw error msg when isbn conatin any alphabetic character.", () => {
             const book = {
-                isbn: "1542687poi",
+                isbn: "1542687POI",
                 title: "Basic of javascript",
                 author: "jone doe",
                 publicationYear: 2022,
