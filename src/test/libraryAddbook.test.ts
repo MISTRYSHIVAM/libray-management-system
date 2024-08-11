@@ -52,6 +52,10 @@ describe("book add feature testing", () => {
                 author: "jone doe",
                 publicationYear: 2022,
             };
+
+            expect(() => {
+                library.addBook(book);
+            }).toThrow();
         });
     });
 });
