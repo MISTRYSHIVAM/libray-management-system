@@ -110,6 +110,11 @@ class Library {
             (book) => book !== isbn
         );
     }
+
+    viewAvailableBook(): Book[] {
+        let availBooks = Array.from(this.books.values());
+        return availBooks;
+    }
 }
 
 export default Library;
