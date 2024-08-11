@@ -110,4 +110,17 @@ describe("book add feature testing", () => {
             library.addBook(book);
         }).toThrow();
     });
+
+    test("7. throw exception when book is already added in library", () => {
+        const book = {
+            isbn: "1542876532",
+            title: "Basic of javascript",
+            author: "jone doe",
+            publicationYear: 2021,
+        };
+        library.addBook(book);
+        expect(() => {
+            library.addBook(book);
+        }).toThrow();
+    });
 });
