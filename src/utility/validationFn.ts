@@ -7,3 +7,7 @@ export const isIsbnContainAlphabet = (isbn: string): boolean => {
     let alphaRegx = /[a-z,A-Z]/;
     return isbnArr.some((ele) => alphaRegx.test(isbn));
 };
+
+export const isEmpty = (field: string | number): boolean => {
+    return field ? false : true;
+};
