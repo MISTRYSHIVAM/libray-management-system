@@ -16,6 +16,10 @@ class Library {
         if (!isIsbnLengthValid(book.isbn)) {
             throw new invalidIsbnError("isbn lengh must be ten");
         }
+
+        if (isIsbnContainAlphabet(book.isbn)) {
+            throw new invalidIsbnError("isbn should not contain alphabet");
+        }
         this.books.set(book.isbn, book);
     }
 }

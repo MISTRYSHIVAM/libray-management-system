@@ -32,7 +32,7 @@ describe("book add feature testing", () => {
             }).toThrow();
         });
 
-        test("2.2 throw error msg when isbn conatin characters.", () => {
+        test("2.2 throw error msg when isbn conatin any alphabetic character.", () => {
             const book = {
                 isbn: "1542687poi",
                 title: "Basic of javascript",
