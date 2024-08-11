@@ -78,6 +78,10 @@ class Library {
             throw new bookException("book not found");
         }
 
+        if (this.borrowedBookList.includes(isbn)) {
+            throw new bookException("book is already borrowed");
+        }
+
         this.borrowedBookList.push(isbn);
     }
 }
