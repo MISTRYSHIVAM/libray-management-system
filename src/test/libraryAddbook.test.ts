@@ -31,5 +31,18 @@ describe("book add feature testing", () => {
                 library.addBook(book);
             }).toThrow();
         });
+
+        test("2.2 throw error msg when isbn conatin characters.", () => {
+            const book = {
+                isbn: "1542687poi",
+                title: "Basic of javascript",
+                author: "jone doe",
+                publicationYear: 2022,
+            };
+
+            expect(() => {
+                library.addBook(book);
+            }).toThrow();
+        });
     });
 });
