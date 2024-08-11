@@ -10,7 +10,7 @@ import {
     invalidIsbnException,
     invalidTitleExecption,
     invalidYearException,
-} from "./customException";
+} from "../utility/customException";
 
 interface Book {
     isbn: string;
