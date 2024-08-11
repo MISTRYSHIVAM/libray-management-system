@@ -9,3 +9,5 @@ class Library {
     private books: Map<string, Book> = new Map();
     private brrowedBookList: String[] = [];
 }
+
+export default Library;
