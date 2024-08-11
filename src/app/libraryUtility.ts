@@ -3,7 +3,7 @@ import {
     isIsbnContainAlphabet,
     isIsbnLengthValid,
 } from "../utility/validationFn";
-import { invalidIsbnError } from "./customException";
+import { invalidIsbnException, invalidTitleExecption } from "./customException";
 
 interface Book {
     isbn: string;
@@ -18,15 +18,19 @@ class Library {
 
     addBook(book: Book) {
         if (isEmpty(book.isbn)) {
-            throw new invalidIsbnError("please provide the isbn");
+            throw new invalidIsbnException("please provide the isbn");
         }
 
         if (!isIsbnLengthValid(book.isbn)) {
-            throw new invalidIsbnError("isbn lengh must be ten");
+            throw new invalidIsbnException("isbn lengh must be ten");
         }
 
         if (isIsbnContainAlphabet(book.isbn)) {
-            throw new invalidIsbnError("isbn should not contain alphabet");
+            throw new invalidIsbnException("isbn should not contain alphabet");
+        }
+
+        if (isEmpty(book.title)) {
+            throw new invalidTitleExecption("please provide the title");
         }
 
         this.books.set(book.isbn, book);

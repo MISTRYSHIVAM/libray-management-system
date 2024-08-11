@@ -5,11 +5,18 @@ class libraryException extends Error {
     }
 }
 
-class invalidIsbnError extends Error {
+class invalidTitleExecption extends Error {
     constructor(msg: string) {
         super(msg);
         this.name = "invalidIsbnException";
     }
 }
 
-export { invalidIsbnError };
+class invalidIsbnException extends Error {
+    constructor(msg: string) {
+        super(msg);
+        this.name = "invalidTitleException";
+    }
+}
+
+export { invalidIsbnException, invalidTitleExecption };
