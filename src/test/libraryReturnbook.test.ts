@@ -23,4 +23,10 @@ describe("book returing fetures testing", () => {
             }).toThrow();
         });
     });
+
+    test("5. user can not return the book which is not added in to the library", () => {
+        expect(() => {
+            library.returnBook("0123654789");
+        }).toThrow();
+    });
 });
