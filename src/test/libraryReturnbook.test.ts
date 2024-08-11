@@ -8,7 +8,13 @@ describe("book returing fetures testing", () => {
     });
 
     test("1. user can return book", () => {
-        let isbn = "0123654789";
+        library.addBook({
+            isbn: "0123456789",
+            title: "Basic of javascript",
+            author: "jone doe",
+            publicationYear: 2022,
+        });
+        let isbn = "0123456789";
         expect(() => {
             library.returnBook(isbn);
         }).not.toThrow();

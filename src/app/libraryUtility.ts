@@ -97,6 +97,10 @@ class Library {
         if (isIsbnContainAlphabet(isbn)) {
             throw new invalidIsbnException("isbn should not contain alphabet");
         }
+
+        if (!this.books.has(isbn)) {
+            throw new bookException("book not found");
+        }
     }
 }
 
