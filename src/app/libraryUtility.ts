@@ -8,6 +8,10 @@ interface Book {
 class Library {
     private books: Map<string, Book> = new Map();
     private brrowedBookList: String[] = [];
+
+    addBook(book: Book) {
+        this.books.set(book.isbn, book);
+    }
 }
 
 export default Library;
