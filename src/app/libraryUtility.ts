@@ -105,6 +105,10 @@ class Library {
         if (!this.borrowedBookList.includes(isbn)) {
             throw new bookException("book is not borrowed yet");
         }
+
+        this.borrowedBookList = this.borrowedBookList.filter(
+            (book) => book !== isbn
+        );
     }
 }
 
