@@ -40,6 +40,11 @@ class Library {
         if (isEmpty(book.author)) {
             throw new invalidAuthorException("please provide the author name");
         }
+        if (isEmpty(book.publicationYear)) {
+            throw new invalidyearException(
+                "please provide the publication year of book"
+            );
+        }
 
         this.books.set(book.isbn, book);
     }

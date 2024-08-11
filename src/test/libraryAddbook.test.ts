@@ -84,4 +84,17 @@ describe("book add feature testing", () => {
             library.addBook(book);
         }).toThrow();
     });
+
+    test("5. throw error when book publication year is empty", () => {
+        const book = {
+            isbn: "1542876532",
+            title: "Basic of javascript",
+            author: "jone doe",
+            publicationYear: null,
+        };
+
+        expect(() => {
+            library.addBook(book);
+        }).toThrow();
+    });
 });
