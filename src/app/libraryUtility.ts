@@ -117,7 +117,9 @@ class Library {
         }
 
         let availBooks = Array.from(this.books.values());
-        return availBooks;
+        return availBooks.filter(
+            (allBook) => !this.borrowedBookList.includes(allBook.isbn)
+        );
     }
 }
 
