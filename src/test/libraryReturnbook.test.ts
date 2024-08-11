@@ -52,4 +52,18 @@ describe("book returing fetures testing", () => {
             library.returnBook("0123456789");
         }).toThrow("book is not borrowed yet");
     });
+
+    test("7. after returning book another user can borrow it.", () => {
+        library.addBook({
+            isbn: "0123456789",
+            title: "Basic of javascript",
+            author: "jone doe",
+            publicationYear: 2022,
+        });
+        library.borrowBook("0123456789");
+        library.returnBook("0123456789");
+        expect(() => {
+            library.borrowBook("0123456789");
+        }).not.toThrow();
+    });
 });
