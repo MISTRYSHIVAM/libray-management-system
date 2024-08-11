@@ -16,6 +16,10 @@ class Library {
     private brrowedBookList: String[] = [];
 
     addBook(book: Book) {
+        if (isEmpty(book.isbn)) {
+            throw new invalidIsbnError("please provide the isbn");
+        }
+
         if (!isIsbnLengthValid(book.isbn)) {
             throw new invalidIsbnError("isbn lengh must be ten");
         }
@@ -23,6 +27,7 @@ class Library {
         if (isIsbnContainAlphabet(book.isbn)) {
             throw new invalidIsbnError("isbn should not contain alphabet");
         }
+
         this.books.set(book.isbn, book);
     }
 }

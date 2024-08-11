@@ -44,5 +44,14 @@ describe("book add feature testing", () => {
                 library.addBook(book);
             }).toThrow();
         });
+
+        test("2.3 throw error msg when isbn is empty.", () => {
+            const book = {
+                isbn: "",
+                title: "Basic of javascript",
+                author: "jone doe",
+                publicationYear: 2022,
+            };
+        });
     });
 });
