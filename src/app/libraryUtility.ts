@@ -101,6 +101,10 @@ class Library {
         if (!this.books.has(isbn)) {
             throw new bookException("book not found");
         }
+
+        if (!this.borrowedBookList.includes(isbn)) {
+            throw new bookException("book is not borrowed yet");
+        }
     }
 }
 

@@ -14,6 +14,7 @@ describe("book returing fetures testing", () => {
             author: "jone doe",
             publicationYear: 2022,
         });
+        library.borrowBook("0123456789");
         let isbn = "0123456789";
         expect(() => {
             library.returnBook(isbn);
@@ -44,7 +45,7 @@ describe("book returing fetures testing", () => {
             publicationYear: 2022,
         });
         expect(() => {
-            library.returnBook("0123456785");
-        }).toThrow();
+            library.returnBook("0123456789");
+        }).toThrow("book is not borrowed yet");
     });
 });
