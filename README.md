@@ -1,7 +1,23 @@
 
 # Library Management System
 
-This library management system is based on single copy per book
+This library management system is based on single copy per book .
+
+### Requirements
+- Add Books:
+    
+    - Users should be able to add new books to the library.
+    - Each book should have a unique identifier (e.g., ISBN), title, author, and
+    - publication year.
+- Borrow Books:
+    - Users should be able to borrow a book from the library.
+    - The system should ensure that the book is available before allowing it to be borrowed.
+    - If the book is not available, the system should raise an appropriate error.
+- Return Books:
+    - Users should be able to return a borrowed book.
+    - The system should update the availability of the book accordingly.
+- View Available Books:
+    - Users should be able to view a list of all available books in the library.
 
 I use typescript to built this project.and jest as a testing framework
 
@@ -12,7 +28,7 @@ I use typescript to built this project.and jest as a testing framework
 - typescript will finally converted into javascript
 
 
-This project is made through TDD (Test driven devlopment)
+#### This project is made through TDD (Test driven devlopment)
 
 #### what is jest ?
 
