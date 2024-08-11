@@ -22,4 +22,10 @@ describe("book borrow feature testing", () => {
             }).toThrow();
         });
     });
+
+    test("5. user can nont borrow the book which is not added in to the library", () => {
+        expect(() => {
+            library.borrowBook("0123654789");
+        }).toThrow();
+    });
 });
