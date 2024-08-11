@@ -26,4 +26,15 @@ class invalidAuthorException extends Error {
     }
 }
 
-export { invalidIsbnException, invalidTitleExecption, invalidAuthorException };
+class invalidYearException extends Error {
+    constructor(msg: string) {
+        super(msg);
+        this.name = "invalidPublicationYearException";
+    }
+}
+export {
+    invalidIsbnException,
+    invalidTitleExecption,
+    invalidAuthorException,
+    invalidYearException,
+};
