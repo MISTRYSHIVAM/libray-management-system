@@ -22,4 +22,23 @@ describe("view available book feature testing", () => {
             library.viewAvailableBook();
         }).toThrow("libarary has no book");
     });
+
+    test("3. only those book will appear which is not borrowed", () => {
+        const book1 = {
+            isbn: "1234567890",
+            title: "Basic of javascript",
+            author: "jone doe",
+            publicationYear: 2022,
+        };
+        const book2 = {
+            isbn: "0321654987",
+            title: "Advanced javascript",
+            author: "peter",
+            publicationYear: 2021,
+        };
+        library.addBook(book1);
+        library.addBook(book2);
+        library.borrowBook("1234567890");
+        expect(library.viewAvailableBook()).toEqual([book2]);
+    });
 });
