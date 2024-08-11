@@ -8,7 +8,7 @@ describe("book add feature testing", () => {
 
     test("1. book should be add to library", () => {
         const book = {
-            isbn: "102356487",
+            isbn: "1234567890",
             title: "Basic of javascript",
             author: "jone doe",
             publicationYear: 2022,
@@ -19,7 +19,7 @@ describe("book add feature testing", () => {
     });
 
     describe("validation for invalidvalid isbn", () => {
-        test("2. throw error msg when isbn is not valid", () => {
+        test("2.1 throw error msg when isbn is not valid", () => {
             const book = {
                 isbn: "15246301",
                 title: "Basic of javascript",
@@ -27,7 +27,9 @@ describe("book add feature testing", () => {
                 publicationYear: 2022,
             };
 
-            expect(library.addBook(book)).toThrow();
+            expect(() => {
+                library.addBook(book);
+            }).toThrow();
         });
     });
 });

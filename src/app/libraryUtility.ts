@@ -1,3 +1,6 @@
+import { isIsbnLengthValid } from "../utility/validationFn";
+import { invalidIsbnError } from "./customException";
+
 interface Book {
     isbn: string;
     title: string;
@@ -10,6 +13,9 @@ class Library {
     private brrowedBookList: String[] = [];
 
     addBook(book: Book) {
+        if (!isIsbnLengthValid(book.isbn)) {
+            throw new invalidIsbnError("isbn lengh must be ten");
+        }
         this.books.set(book.isbn, book);
     }
 }
