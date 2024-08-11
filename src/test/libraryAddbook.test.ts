@@ -58,4 +58,13 @@ describe("book add feature testing", () => {
             }).toThrow();
         });
     });
+
+    test("3. throw error when book title is empty", () => {
+        const book = {
+            isbn: "1542876532",
+            title: "",
+            author: "jone doe",
+            publicationYear: 2022,
+        };
+    });
 });
