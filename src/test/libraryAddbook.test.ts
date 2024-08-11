@@ -29,7 +29,7 @@ describe("book add feature testing", () => {
 
             expect(() => {
                 library.addBook(book);
-            }).toThrow();
+            }).toThrow("isbn lengh must be ten");
         });
 
         test("2.2 throw exception msg when isbn conatin any alphabetic character.", () => {
@@ -42,7 +42,7 @@ describe("book add feature testing", () => {
 
             expect(() => {
                 library.addBook(book);
-            }).toThrow();
+            }).toThrow("isbn should not contain alphabet");
         });
 
         test("2.3 throw exception msg when isbn is empty.", () => {
@@ -55,7 +55,7 @@ describe("book add feature testing", () => {
 
             expect(() => {
                 library.addBook(book);
-            }).toThrow();
+            }).toThrow("please provide the isbn");
         });
     });
 
@@ -69,7 +69,7 @@ describe("book add feature testing", () => {
 
         expect(() => {
             library.addBook(book);
-        }).toThrow();
+        }).toThrow("please provide the title");
     });
 
     test("4. throw exception when book author is empty", () => {
@@ -82,7 +82,7 @@ describe("book add feature testing", () => {
 
         expect(() => {
             library.addBook(book);
-        }).toThrow();
+        }).toThrow("please provide the author name");
     });
 
     test("5. throw exception when book publication year is empty", () => {
@@ -95,7 +95,7 @@ describe("book add feature testing", () => {
 
         expect(() => {
             library.addBook(book);
-        }).toThrow();
+        }).toThrow("please provide the publication year of book");
     });
 
     test("6. throw exception when book publication year is invalid", () => {
@@ -108,7 +108,7 @@ describe("book add feature testing", () => {
 
         expect(() => {
             library.addBook(book);
-        }).toThrow();
+        }).toThrow("invalid the publication year");
     });
 
     test("7. throw exception when book is already added in library", () => {
@@ -121,6 +121,6 @@ describe("book add feature testing", () => {
         library.addBook(book);
         expect(() => {
             library.addBook(book);
-        }).toThrow();
+        }).toThrow("Book is already added to library");
     });
 });

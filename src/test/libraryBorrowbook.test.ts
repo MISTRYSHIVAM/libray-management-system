@@ -20,19 +20,23 @@ describe("book borrow feature testing", () => {
     });
 
     let invalidIsbn = ["", "sdgy458725", "123654"];
-
+    let errMsg = [
+        "please provide the isbn",
+        "isbn should not contain alphabet",
+        "isbn lengh must be ten",
+    ];
     invalidIsbn.forEach((isbn, index) => {
         test(`${index + 2}. throw exception when isbn is invalid`, () => {
             expect(() => {
                 library.borrowBook(isbn);
-            }).toThrow();
+            }).toThrow(errMsg[index]);
         });
     });
 
     test("5. user can nont borrow the book which is not added in to the library", () => {
         expect(() => {
             library.borrowBook("0123654789");
-        }).toThrow();
+        }).toThrow("book not found");
     });
 
     test("6. throw exception if requested book is already borrowed.", () => {
@@ -45,6 +49,6 @@ describe("book borrow feature testing", () => {
         library.borrowBook("0123456789");
         expect(() => {
             library.borrowBook("0123456789");
-        }).toThrow();
+        }).toThrow("book is already borrowed");
     });
 });
