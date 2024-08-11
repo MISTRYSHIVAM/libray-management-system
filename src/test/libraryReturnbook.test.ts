@@ -2,6 +2,7 @@ import Library from "../app/libraryUtility";
 
 describe("book returing fetures testing", () => {
     let library: Library;
+
     beforeEach(() => {
         library = new Library();
     });
@@ -11,5 +12,15 @@ describe("book returing fetures testing", () => {
         expect(() => {
             library.returnBook(isbn);
         }).not.toThrow();
+    });
+
+    let invalidIsbn = ["", "sdgy458725", "123654"];
+
+    invalidIsbn.forEach((isbn, index) => {
+        test(`${index + 2}. throw exception when isbn is invalid`, () => {
+            expect(() => {
+                library.returnBook(isbn);
+            }).toThrow();
+        });
     });
 });
