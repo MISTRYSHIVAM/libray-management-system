@@ -6,7 +6,7 @@ describe("book add feature testing", () => {
         library = new Library();
     });
 
-    test("book should be add to library", () => {
+    test("1. book should be add to library", () => {
         const book = {
             isbn: "102356487",
             title: "Basic of javascript",
