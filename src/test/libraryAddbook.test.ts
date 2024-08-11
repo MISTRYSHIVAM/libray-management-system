@@ -19,7 +19,7 @@ describe("book add feature testing", () => {
     });
 
     describe("validation for invalidvalid isbn", () => {
-        test("2.1 throw error msg when isbn is not valid", () => {
+        test("2.1 throw exception msg when isbn is not valid", () => {
             const book = {
                 isbn: "15246301",
                 title: "Basic of javascript",
@@ -32,7 +32,7 @@ describe("book add feature testing", () => {
             }).toThrow();
         });
 
-        test("2.2 throw error msg when isbn conatin any alphabetic character.", () => {
+        test("2.2 throw exception msg when isbn conatin any alphabetic character.", () => {
             const book = {
                 isbn: "1542687POI",
                 title: "Basic of javascript",
@@ -45,7 +45,7 @@ describe("book add feature testing", () => {
             }).toThrow();
         });
 
-        test("2.3 throw error msg when isbn is empty.", () => {
+        test("2.3 throw exception msg when isbn is empty.", () => {
             const book = {
                 isbn: "",
                 title: "Basic of javascript",
@@ -59,7 +59,7 @@ describe("book add feature testing", () => {
         });
     });
 
-    test("3. throw error when book title is empty", () => {
+    test("3. throw exception when book title is empty", () => {
         const book = {
             isbn: "1542876532",
             title: "",
@@ -72,7 +72,7 @@ describe("book add feature testing", () => {
         }).toThrow();
     });
 
-    test("4. throw error when book author is empty", () => {
+    test("4. throw exception when book author is empty", () => {
         const book = {
             isbn: "1542876532",
             title: "Basic of javascript",
@@ -85,7 +85,7 @@ describe("book add feature testing", () => {
         }).toThrow();
     });
 
-    test("5. throw error when book publication year is empty", () => {
+    test("5. throw exception when book publication year is empty", () => {
         const book = {
             isbn: "1542876532",
             title: "Basic of javascript",
@@ -98,7 +98,7 @@ describe("book add feature testing", () => {
         }).toThrow();
     });
 
-    test("6. throw error when book publication year is invalid", () => {
+    test("6. throw exception when book publication year is invalid", () => {
         const book = {
             isbn: "1542876532",
             title: "Basic of javascript",
