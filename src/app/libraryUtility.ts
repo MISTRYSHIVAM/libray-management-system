@@ -84,6 +84,8 @@ class Library {
 
         this.borrowedBookList.push(isbn);
     }
+
+    returnBook(isbn: string) {}
 }
 
 export default Library;
